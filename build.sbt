@@ -1,6 +1,6 @@
 import com.typesafe.sbt.pgp.PgpKeys.{gpgCommand,pgpSecretRing,useGpg}
 name := "config4s"
-
+organization:="com.github.youngce"
 version := "0.1"
 
 scalaVersion := "2.12.4"

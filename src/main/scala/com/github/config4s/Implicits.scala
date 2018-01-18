@@ -17,12 +17,15 @@ object Implicits {
 	}
 	implicit class RichConfig(cfg:Config){
 
+		def asScala= new Config4s(cfg)
 		def getAnyRefOpt(path:String): Option[AnyRef] ={
+//			cfg.getAnyRefList()
 			if (cfg.hasPath(path)) Some(cfg.getAnyRef(path)) else None
 		}
 		def getStringOpt(path:String): Option[String] ={
 			getOpt[String](path)
 		}
+
 		def getBooleanOpt(path:String) ={
 
 			getOpt[Boolean](path)
@@ -30,6 +33,9 @@ object Implicits {
 		def getIntOpt(path:String)={
 			getOpt[Int](path)
 		}
+//		def getIntOpt(path:String)={
+//			getOpt[Int](path)
+//		}
 
 
 
